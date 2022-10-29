@@ -46,7 +46,7 @@
                                                 while($row = mysqli_fetch_assoc($result)){
                                                     ?>
                                                     <tr>
-                                                        <td><?php echo ++$a ?></td>
+                                                        <td><?php echo "CMS-ST-".$row['student_id'] ?></td>
                                                         <td><?php echo $row['name'] ?></td>
                                                         <td><?php echo $row['email'] ?></td>
                                                         <td><?php echo $row['created_at'] ?></td>

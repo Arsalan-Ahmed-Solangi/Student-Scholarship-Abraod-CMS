@@ -1,34 +1,59 @@
 <?php 
 
- 
-
     require_once("../database/database.php");
     $db = new Database();
- 
-    $query = "SELECT StoreCode,StoreName,zones.`ZoneName`,regions.`RegionName`,areas.AreaName,TownName,CityCode,IsCityAssigned,CityAssignedOn,UrbanRural,BandId,TotalIndustry_OPW,VolumePercentage,
-    StorePercentage,ValuePremium,UrbanRuralStatus,TotalPMPKL_OPW,MORVEN_OPW,MARLBORORED_OPW,MARLBOROGOLD_OPW,REDANDWHITEKSF_OPW,REDANDWHITESPL_OPW,
-    PARLIAMENT_OPW,DIPLOMAT_OPW,OTHERS_OPW,TotalPTC_OPW,DUNHILL_OPW,BENSONAndHEDGES_OPW,JOHNPLAYER_OPW,VELOCansperWeek,EMBASSY_OPW,GOLDFLAKE_OPW,CAPSTANBYPALLMALL_OPW,
-    GOLDLEAFCLASSIC_OPW,GOLDLEAFSPECIAL_OPW,ROTHMANS_OPW,TotalGND_OPW,GNDValue_OPW,GNDPremium_OPW,MARDAN_OPW,PercOfTotalCigaretteSalesInOuters
-    FROM stores 
-    INNER JOIN zones ON stores.`ZoneId` = zones.`ZoneId`
-    INNER JOIN regions ON stores.`RegionId` = regions.`RegionId`
-    INNER JOIN areas ON stores.`AreaId` = stores.`AreaId` 
-    INNER JOIN cities ON stores.`CityId` = cities.`CityId`
-    WHERE UrbanRuralStatus = 0
-    ";
-    $result = $db->executeQuery($query);
-    print_r($result);
-    // $storesArray  = array();
-    // while($row = mysqli_fetch_array($result)){
-    //   $array = str_replace("[","",$row['SelectedStores']);
-    //   $array = str_replace("]","",$array);
-     
-    //   $newArray = explode(",",$array);
-    //   $storesArray = array_merge($storesArray,$newArray);
-    
-    // }
-    // // print_r($storesArray);
-    // $storesArray  = implode(",",$storesArray);
-   
-    // echo "SELECT COUNT(Id) AS VerifiedStores FROM sf_stores  AND sf_stores.`VerificationStatus` <> 3 AND sf_stores.`StoreId` IN (".$storesArray.")";
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UpdateStoresAreas</title>
+</head>
+<body>
+    <form action="test.php" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file"/>
+        <button type="submit" name="import">Import</button>
+    </form>
+    <?php 
+    
+        if(isset($_POST['import'])){
+
+            $filename=$_FILES["file"]["tmp_name"];   
+            
+            if($_FILES["file"]["size"] > 0)
+            {
+               $file = fopen($filename, "r");
+                 while (($getData = fgetcsv($file, 10000, ",")) !== FALSE)
+                  {
+
+                    $sql = "UPDATE stores SET `AreaId`='$getData[1]',`TownName`='$getData[2]'  WHERE `StoreCode`='$getData[0]'";
+                   
+                    print_r($sql);
+                    die;
+                          $result = mysqli_query($con, $sql);
+               if(!isset($result))
+               {
+                 echo "<script type=\"text/javascript\">
+                     alert(\"Invalid File:Please Upload CSV File.\");
+                     window.location = \"test.php\"
+                     </script>";    
+               }
+               else {
+                   echo "<script type=\"text/javascript\">
+                   alert(\"CSV File has been successfully Imported.\");
+                   window.location = \"test.php\"
+                 </script>";
+               }
+                  }
+             
+                  fclose($file);  
+            }
+
+        }
+    
+    
+    ?>
+</body>
+</html>

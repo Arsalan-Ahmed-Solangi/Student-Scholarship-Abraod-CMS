@@ -76,11 +76,33 @@
         }
     
     }
+
+
+    //****UpdateScholarship******//
+    if(isset($_REQUEST['updateScholarship'])){
+        extract($_REQUEST);
+        $query = "UPDATE scholarships SET agent_id='$agent_id',qualification='$qualification',degree_id='$degree_id',institute_name='$institute_name',
+        ilets_score='$ilets_score',country='$country',
+        city='$city',minimum_cgpa='$cgpa',details='$details',duration='$duration',`language`='$language' WHERE scholarship_id = $id";
+
+            $result = $db->executeQuery($query);
+ 
+            if($result){
+                $_SESSION['success']  = "Scholarship Details has been Updated successfully!";  
+                header("location:../view_scholarshipss.php");
+                die;
+            }else{
+                $_SESSION['error']  = "Something Went Wrong";  
+                $error = "edit_scholarship?id=".$id;
+                header("location:../".$error);
+                die;
+            }
+    }
     
     //****Else*******//
     else{
         $_SESSION['error']  = "You Don't Have Permission";  ;
-        header("location:../add_scholarship.php");
+        header("location:../view_scholarships.php");
         die;
 
     }
