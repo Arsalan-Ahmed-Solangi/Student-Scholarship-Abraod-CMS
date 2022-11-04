@@ -271,10 +271,27 @@
                                 <hr/>
                                 <h6>Edit Scholarship Images  </h6>
                                 <hr/>
-                                <form action="clasess/scholarship.php" method="POST" enctype="multipart/form-data">
+                                <form action="classes/scholarship.php" method="POST" enctype="multipart/form-data">
                                    <div class="row">
-                                    <div class="col-md-4 col-xs-12 col-sm-12 col-lg-4"></div>
-                                    <div class="col-md-8 col-xs-12 col-sm-12 col-lg-8"></div>
+                                    <div class="col-md-4 col-xs-12 col-sm-12 col-lg-4">
+                                        <img src="<?php echo substr($data['image'],3)  ?>" width="200px"  class="img img-thumbnail img-fluid"/>
+                                        <br/><br/><br/>
+                                        <img src="<?php echo substr($data['logo'],3)  ?>" width="200px"  class="img img-thumbnail img-fluid"/>
+                                    </div>
+                                    <div class="col-md-8 col-xs-12 col-sm-12 col-lg-8">
+                                       
+                                    <input type="hidden" name="id" value="<?php echo $data['scholarship_id']?>"/>
+                                        <div class="form-group mb-5">
+                                            <label>Update Image Cover</label>
+                                            <input type="file" name="image" class="form-control" accept="image/*"/> 
+                                        </div>
+
+                                        <div class="form-group mt-5">
+                                            <label>Update Logo</label>
+                                            <input type="file" name="logo" class="form-control" accept="image/*"/> 
+                                        </div>
+                                        <button type="submit" name="updateImages" class="btn btn-sm  mt-5  offset-md-8 btn-danger">Save & Update</button>
+                                    </div>
                                    </div>                 
                                 </form>
                             </div>
