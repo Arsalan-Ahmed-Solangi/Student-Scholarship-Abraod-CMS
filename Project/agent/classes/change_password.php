@@ -12,16 +12,17 @@
     if(isset($_REQUEST['change_password'])){
         
         extract($_REQUEST);
-        $password =  $_SESSION['admin'][3];
+        $password =  $_SESSION['agent']['password'];
 
         if($old_password == $password ){
 
             if($new_password == $confirm_password){ 
-                $id = $_SESSION['admin'][0];
-                $query = "UPDATE admins SET password=$new_password WHERE admin_id=$id";
+                $id = $_SESSION['agent']['agent_id'];
+                echo $query = "UPDATE agents SET password='$new_password' WHERE agent_id=$id";
                 $result = $db->executeQuery($query);
+           
                 if($result){
-                    $_SESSION['admin'][3] = $new_password;
+                    $_SESSION['agent']['password'] = $new_password;
                     $_SESSION['success']  = "Your account password changed successfully!";  ;
                     header("location:../change_password.php");
                     die; 

@@ -14,15 +14,29 @@
         
         extract($_REQUEST);
 
-        $query = "SELECT * FROM admins WHERE email='$email' AND password='$password'";
+        $query = "SELECT * FROM agents WHERE email='$email' AND password='$password'";
         $result = $db->executeQuery($query);
         
         if($result->num_rows > 0){
             
-            $_SESSION['admin']  = $result->fetch_array();
-            $_SESSION['success']  = "Welcome to CMS Admin Panel";  ;
-            header("location:../");
-            die;
+
+            $statusCheck  = $result->fetch_assoc();
+        
+            if($statusCheck['status'] == 1){
+                
+                $_SESSION['agent']  = $statusCheck;
+             
+                $_SESSION['success']  = "Welcome to CMS Agent Panel";
+              
+                header("location:../");
+                die;
+            }else{
+                $_SESSION['error']  = "Your account is Inactive, Contact Admin";
+    
+                header("location:../login.php");
+                die;
+            }
+
 
         }else{
             

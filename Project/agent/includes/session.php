@@ -1,8 +1,7 @@
 <?php 
 
     session_start();
-    if(!isset($_SESSION['admin'])){
-        $_SESSION['error'] = "Your session is expired Login Again!";
+    if(!isset($_SESSION['agent'])){
         header('location:login.php');
         die;
     }

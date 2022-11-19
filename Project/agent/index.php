@@ -24,121 +24,39 @@
                 <main>
                     <div class="container-fluid px-4">
                         <div class="p-3"><?php require_once("includes/messages.php") ?></div>
-                        <h2 class="mt-1">Dashboard</h2>
+                        <h3 class="mt-1">Dashboard</h3>
                         <ol class="breadcrumb mb-4 bg-light p-2">
-                            <li class="breadcrumb-item active"><i class="fa fa-home"></i> Home</li>
+                            <li class="breadcrumb-item active"><i class="fa fa-user"></i> Profile Details</li>
                         </ol>
                         <div class="row">
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-danger text-white mb-4">
-                                    <div class="card-body">University Scholarships <span class="badge bg-light text-dark">
-                                    <?php 
-                                        $query = "SELECT * FROM universities";
-                                        $result = $db->executeQuery($query);
-                                        echo $result->num_rows;
-                                    ?></span></div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-danger text-white mb-4">
-                                    <div class="card-body">Registered Agents <span class="badge bg-light text-dark">
+                           <div class="col-md-4 col-lg-4 col-xs-12 col-sm-12">
+                            <img  class="img img-thumbnail img-fluid" style="width:70%; height: 300px;object-fit:cover" src="<?php echo substr($_SESSION['agent']['profile'],3); ?>"/>
+                            
+                           </div>
+                           <div class="col-md-8 col-lg-8 col-xs-12 col-sm-12">
 
-                                    <?php 
-                                        $query = "SELECT * FROM agents";
-                                        $result = $db->executeQuery($query);
-                                        echo $result->num_rows;
-                                    ?>
+                              <div class="card shadow-sm bg-white p-2">
+                                <h6>Full Name : <?php echo $_SESSION['agent']['name'] ?> </h6>
+                              </div>
 
-                                    </span></div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-danger text-white mb-4">
-                                    <div class="card-body">Registered Students <span class="badge bg-light text-dark">
+                              <div class="card shadow-sm bg-white p-2">
+                                <h6>Email : <?php echo $_SESSION['agent']['email'] ?> </h6>
+                              </div>
 
-                                    <?php 
-                                        $query = "SELECT * FROM students";
-                                        $result = $db->executeQuery($query);
-                                        echo $result->num_rows;
-                                    ?>
+                              <div class="card shadow-sm bg-white p-2">
+                                <h6>Phone No : <?php echo $_SESSION['agent']['phone_no'] ?> </h6>
+                              </div>
 
+                              <div class="card shadow-sm bg-white p-2">
+                                <h6>CNIC : <?php echo $_SESSION['agent']['cnic'] ?> </h6>
+                              </div>
 
-                                    </span></div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
+                              <a href="edit_profile" class="btn btn-sm btn-danger offset-md-10 mt-2"><i class="fa fa-edit"></i> Edit Profile</a>
 
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-danger text-white mb-4">
-                                    <div class="card-body">Total Site Admins <span class="badge bg-light text-dark">
-
-                                    <?php 
-                                        $query = "SELECT * FROM admins";
-                                        $result = $db->executeQuery($query);
-                                        echo $result->num_rows;
-                                    ?>
-
-                                    </span></div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="view_admins">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
+                           </div>
                         </div>
                      
-                        <div class="card mb-4">
-                            <div class="card-header">
-                                <i class="fa fa-question-circle"></i>
-                                Enquiries
-                            </div>
-                            <div class="card-body">
-                                <table id="datatablesSimple">
-                                    <thead>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>Email</th>
-                                            <th>Subject</th>
-                                            <th>Message</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php 
-                                        
-                                            $query = "SELECT * FROM enquires ORDER BY enquiry_id DESC  LIMIT 5";
-                                            $result = $db->executeQuery($query);
-                                            if($result->num_rows){
-                                                while($row = mysqli_fetch_assoc($result)){
-                                                    ?>
-                                                    <tr>
-                                                        <td><?php echo $row['name'] ?></td>
-                                                        <td><?php echo $row['email'] ?></td>
-                                                        <td><?php echo $row['subject'] ?></td>
-                                                        <td><?php echo $row['message'] ?></td>
-                                                        <td>
-                                                            <a class="btn btn-danger btn-sm" href="classes/delete_enquiry.php?id=<?php echo $row['enquiry_id'] ?>"><i class="fa fa-trash"></i></a>
-                                                        </td>
-                                                    </tr>
-                                                    <?php
-                                                }
-                                            }
-                                        ?>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+
                     </div>
                 </main>
     <!-- End of Main Content -->

@@ -29,7 +29,7 @@
                                <table class="table table-bordered table-hover " id="table">
                                     <thead>
                                         <tr>
-                                            <th>SR#</th>
+                                     
                                             <th>Name</th>
                                             <th>Email</th>
                                             <th>Subject</th>
@@ -51,6 +51,7 @@
                                                     <td><?php echo $row['email'] ?></td>
                                                     <td><?php echo $row['subject'] ?></td>
                                                     <td><?php echo $row['message'] ?></td>
+                                                    <td><?php echo $row['created_at'] ?></td>
                                                     <td>
                                                         <a class="btn btn-danger btn-sm" href="classes/delete_enquiry.php?id=<?php echo $row['enquiry_id'] ?>"><i class="fa fa-trash"></i></a>
                                                     </td>

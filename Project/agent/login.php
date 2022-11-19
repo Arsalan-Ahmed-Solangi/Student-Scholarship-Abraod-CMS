@@ -1,7 +1,7 @@
 <?php  
 
     session_start();
-    if(isset($_SESSION['admin'])){
+    if(isset($_SESSION['agent'])){
         $_SESSION['success'] = "You are already logged In!";
         header("location:index.php");
         die;
@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-    <title>CMS ADMIN LOGIN</title>
+    <title>CMS  AGENT LOGIN</title>
     <style>
         body{
             background-color: #212529;
@@ -51,7 +51,7 @@
                 <div class="col col-xl-10">
                     <div class="card shadow-lg bg-white p-2" style="border-radius: 0.5rem;top:20px">
                         <div class="card-body">
-                             <h4 class="text-center"><b>WELCOME TO CMS ADMIN LOGIN</b></h4>
+                             <h4 class="text-center"><b>WELCOME TO CMS AGENT LOGIN</b></h4>
                              <?php require_once("includes/messages.php") ?>
                              <hr/>
                             
@@ -72,7 +72,8 @@
                                 <div class="form-group text-center">
                                     <hr/>
                                     <a href="../" class="btn btn-sm btn-danger "><i class="fa fa-arrow-left"></i> Back To Home</a>
-                                    <a href="/admin/forget-password.php" class="btn btn-sm btn-primary "><i class="fa fa-undo"></i> Forget Password</a>
+                                    <a href="forget_password" class="btn btn-sm btn-dark "><i class="fa fa-refresh"></i> Forget Password</a>
+                            
                                 </div>
                              </form>
                         </div>
