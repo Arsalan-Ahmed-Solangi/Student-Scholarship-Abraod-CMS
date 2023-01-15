@@ -44,7 +44,7 @@
          }
 
         //***Uploading Image and Checking Validation********//
-        $directory = "../uploads/agent";
+        $directory = "../../agent/uploads/agent";
         if(!is_dir($directory)){
             mkdir($directory);
         }
@@ -143,7 +143,7 @@
     if(isset($_REQUEST['updateProfile'])){
         extract($_REQUEST);
         $error = "edit_agent?id=".$id;
-        $directory = "../uploads/agent";
+        $directory = "../../agent/uploads/agent";
         if(!is_dir($directory)){
             mkdir($directory);
         }

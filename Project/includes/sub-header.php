@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-lg-8 col-sm-8">
           <div class="left-content">
-            <p>This is FYP  <em>Study Abroad Opportunity Finder</em> is a simplest to find liesure scholarships</p>
+            <p>This is University Finder <em>Study Abroad Opportunity Finder</em> is a simplest to find liesure scholarships</p>
           </div>
         </div>
         <div class="col-lg-4 col-sm-4">

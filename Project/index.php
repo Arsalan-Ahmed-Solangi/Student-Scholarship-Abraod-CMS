@@ -20,7 +20,7 @@
               <div class="col-lg-12">
                 <div class="caption">
               <h6>Hi Students</h6>
-              <h2>Welcome to  University Finder FYP</h2>
+              <h2>Welcome to  University Finder</h2>
               <div class="row">
                 <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
                     <div class="card" style="width:140%">
@@ -31,7 +31,7 @@
                                         <input type="text" required name="country" placeholder="Enter Country Name" class="form-control"/>
                                     </div>
                                     <div class="col-md-3">
-                                        <input type="text" required name="institute_name" placeholder="Enter Institute Name" class="form-control"/>
+                                        <input type="text" required name="institute_name" placeholder="Enter University Name" class="form-control"/>
                                     </div>
 
                                     <div class="col-md-3">

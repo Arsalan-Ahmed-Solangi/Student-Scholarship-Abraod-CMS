@@ -7,6 +7,11 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </a>
+
+                            <a class="nav-link" href="chat">
+                                <div class="sb-nav-link-icon"><i class="fa fa-comments"></i></div>
+                                Chat 
+                            </a>
                                
                             <?php 
                             
@@ -80,7 +85,7 @@
                             </a>
                             <div class="collapse" id="degreeLayout" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="view_languages"> View Degrees</a>
+                                    <a class="nav-link" href="view_degrees"> View Degrees</a>
                                     <a class="nav-link" href="add_degree"> Add New Degree</a>
                                 </nav>
                             </div>
@@ -97,7 +102,19 @@
                                     <a class="nav-link" href="add_language"> Add New Language</a>
                                 </nav>
                             </div>
-
+                            
+                            <!-- Scholarships  -->
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#universityLayouts" aria-expanded="false" aria-controls="universityLayouts">
+                                <div class="sb-nav-link-icon"><i class="fa fa-institution"></i></div>
+                                 Universities 
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a> 
+                            <div class="collapse" id="universityLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="view_universities">View Universities</a>
+                                    <a class="nav-link" href="add_university"> Add University</a>
+                                </nav>
+                            </div>
                         
                              <!-- Scholarships  -->
                              <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#scholarshipLayouts" aria-expanded="false" aria-controls="scholarshipLayouts">

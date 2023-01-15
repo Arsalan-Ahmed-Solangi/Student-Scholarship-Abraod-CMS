@@ -21,7 +21,7 @@
                         <div class="p-3"><?php require_once("includes/messages.php") ?></div>
                         <h2 class="mt-1">Edit Scholarship Details</h2>
                         <ol class="breadcrumb mb-4 bg-light p-2">
-                            <li class="breadcrumb-item active"><i class="fa fa-plus-circle"></i> Edit Scholarship Details</li>
+                            <li class="breadcrumb-item active"><i class="fa fa-edit"></i> Edit Scholarship Details</li>
                         </ol>
                         <?php 
                                     

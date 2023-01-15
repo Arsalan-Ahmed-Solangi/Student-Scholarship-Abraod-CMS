@@ -30,7 +30,7 @@
                         </ol>
                         <div class="row">
                            <div class="col-md-4 col-lg-4 col-xs-12 col-sm-12">
-                            <img  class="img img-thumbnail img-fluid" style="width:70%; height: 300px;object-fit:cover" src="<?php echo substr($_SESSION['agent']['profile'],3); ?>"/>
+                            <img  class="img img-thumbnail img-fluid" style="width:200; height: 200px;object-fit:cover" onError="this.src = 'https://cdn-icons-png.flaticon.com/512/9200/9200701.png'" src="<?php echo substr($_SESSION['agent']['profile'],3); ?>"/>
                             
                            </div>
                            <div class="col-md-8 col-lg-8 col-xs-12 col-sm-12">

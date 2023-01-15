@@ -67,7 +67,7 @@
         
         if($result){
             $_SESSION['success']  = "Scholarship Details has been added successfully!";  
-            header("location:../view_scholarship.php");
+            header("location:../view_scholarships.php");
             die;
         }else{
             $_SESSION['error']  = "Something Went Wrong";  ;
@@ -89,7 +89,7 @@
  
             if($result){
                 $_SESSION['success']  = "Scholarship Details has been Updated successfully!";  
-                header("location:../view_scholarshipss.php");
+                header("location:../view_scholarships.php");
                 die;
             }else{
                 $_SESSION['error']  = "Something Went Wrong";  
