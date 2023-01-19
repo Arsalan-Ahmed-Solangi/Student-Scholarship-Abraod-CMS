@@ -19,45 +19,9 @@
             <div class="row">
               <div class="col-lg-12">
                 <div class="caption">
-              <h6>Hi Students</h6>
-              <h2>Welcome to  University Finder</h2>
-              <div class="row">
-                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-                    <div class="card" style="width:110%">
-                        <div class="card-body p-3">
-                            <form id="form" action="search-scholarships.php" method="POST">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <input type="text"  name="country" placeholder="Enter Country Name" class="form-control"/>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <input type="text"  name="institute_name" placeholder="Enter University Name" class="form-control"/>
-                                    </div>
-
-                                    <div class="col-md-3">
-                                        <select name="price" class="form-select" >
-                                          <option value="">--Select Price Range--</option>
-                                          <option value="1">Below 1 Lac</option>
-                                          <option value="2">Upto to 5Lacs</option>
-                                          <option value="3">Above 5Lacs</option>
-                                        </select>
-                                    </div>
-
-                                  
-                                    <div class="col-md-3">
-                                        <input type="number"  max="4.0" min="1" step="0.1"  name="cgpa" placeholder="Enter CGPA" class="form-control"/>
-                                    </div>
-                                </div>
-                               
-                            
-                        </div>
-                    </div>
-                    <div class="main-button-red">
-                        <div ><button type="submit" name="search" class="btn btn-danger"><i class="fa fa-search"></i> Search Now</button></div>
-                    </div>
-                    </form>
-                </div>
-            </div>
+             
+              <h2>WELCOME TO STUDENT PROFILE - <?php echo $_SESSION['student']['name'] ?></h2>
+     
              
           </div>
               </div>
@@ -66,67 +30,6 @@
       </div>
   </section>
 
-
-  <section class="services">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="owl-service-item owl-carousel">
-          
-            <div class="item">
-              <div class="icon">
-                <img src="assets/images/service-icon-01.png" alt="">
-              </div>
-              <div class="down-content">
-                <h4>Search Plenty Scholarships</h4>
-                
-              </div>
-            </div>
-            
-            <div class="item">
-              <div class="icon">
-                <img src="assets/images/service-icon-02.png" alt="">
-              </div>
-              <div class="down-content">
-                <h4>Documents and Details</h4>
-        
-              </div>
-            </div>
-            
-            <div class="item">
-              <div class="icon">
-                <img src="assets/images/service-icon-03.png" alt="">
-              </div>
-              <div class="down-content">
-                <h4>Best Students</h4>
-
-              </div>
-            </div>
-            
-            <div class="item">
-              <div class="icon">
-                <img src="assets/images/service-icon-02.png" alt="">
-              </div>
-              <div class="down-content">
-                <h4>Meetings With Agents</h4>
-              </div>
-            </div>
-            
-            <div class="item">
-              <div class="icon">
-                <img src="assets/images/service-icon-03.png" alt="">
-              </div>
-              <div class="down-content">
-                <h4>24/7 Online Support</h4>
-        
-              </div>
-            </div>
-            
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <section class="upcoming-meetings" id="meetings">
     <div class="container">

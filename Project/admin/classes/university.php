@@ -13,7 +13,7 @@ if(isset($_REQUEST['editUniversity'])){
     $error = "/edit_university?id=".$id;
 
     $query = "UPDATE universities SET `university_name`='$name',`country`='$country',`city`='$city',`university_details`='$details',
-    `address`='$address'  WHERE university_id = $id";
+    `address`='$address',`link`='$link'  WHERE university_id = $id";
 
         $result = $db->executeQuery($query);
 
@@ -82,8 +82,8 @@ if(isset($_REQUEST['addUniversity'])){
                 // $conditionImage = "`image`='$imageFile'";
             }
             $details = str_replace('"'," ",$details);
-            $query = "INSERT INTO universities (`university_name`,`country`,`city`,`address`,`university_details`,`university_image`)
-             VALUES ('$name','$country','$city','$address','$details','$imageFile')";
+            $query = "INSERT INTO universities (`link`,`university_name`,`country`,`city`,`address`,`university_details`,`university_image`)
+             VALUES ('$link','$name','$country','$city','$address','$details','$imageFile')";
             
             $result = $db->executeQuery($query);
             if($result){

@@ -244,6 +244,17 @@
                                         </div>
                                     </div>
 
+                                    <div class="form-group mb-2 mt-2">
+                                        <label>University Offical Website LInk<span class="text-danger">*</span></label>
+                                        <input type="url" name="link" required placeholder="Please enter valid url"/>
+                                        <span class="form-text">please provide valid official website link</span>
+                                    </div>
+                                    
+                                    <div class="form-group mb-2 mt-2">
+                                        <label>Scholarship Course Price<span class="text-danger">*</span></label>
+                                        <input type="number" name="price" required placeholder="Please enter price"/>
+                                        <span class="form-text">please enter price in numbers only</span>
+                                    </div>
                                 
                                     <div class="form-group mb-2 mt-2 offset-md-10">
                                        <button type="submit" class="btn btn-danger btn-sm" name="add_scholarship">Save & Add</button>

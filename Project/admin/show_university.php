@@ -69,6 +69,10 @@
                                             <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12">
                                                 <p><b> University Details : </b>  <?php echo $row['university_details'] ?> </p>
                                             </div>
+
+                                            <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12">
+                                                <p><b>University Offical Website Link : </b> <a target="_blank" href=" <?php echo $row['link'] ?> "><span class="badge bg-primary text-light"> Open Link </span></a></p>
+                                            </div>
                                             <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
                                                 <p><b> Created At: </b>  <?php echo $row['created_at'] ?> </p>
                                             </div>

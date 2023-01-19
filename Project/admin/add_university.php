@@ -53,6 +53,12 @@
                                     </div>
 
                                     <div class="form-group mb-2 mt-2">
+                                        <label>University Offical Website LInk<span class="text-danger">*</span></label>
+                                        <input type="url" name="link" required placeholder="Please enter valid url"/>
+                                        <span class="form-text">please provide valid official website link</span>
+                                    </div>
+
+                                    <div class="form-group mb-2 mt-2">
                                         <label>University Image<span class="text-danger">*</span></label>
                                         <input type="file" name="image" accept="image/*" class="form-control" required />
                                             <span class="form-text text-success">please select institute image cover picture</span>

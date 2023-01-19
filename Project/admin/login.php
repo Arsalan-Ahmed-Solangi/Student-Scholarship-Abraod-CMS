@@ -72,7 +72,7 @@
                                 <div class="form-group text-center">
                                     <hr/>
                                     <a href="../" class="btn btn-sm btn-danger "><i class="fa fa-arrow-left"></i> Back To Home</a>
-                                    <a href="/admin/forget-password.php" class="btn btn-sm btn-primary "><i class="fa fa-undo"></i> Forget Password</a>
+                                    <a href="forget_password.php" class="btn btn-sm btn-primary "><i class="fa fa-undo"></i> Forget Password</a>
                                 </div>
                              </form>
                         </div>

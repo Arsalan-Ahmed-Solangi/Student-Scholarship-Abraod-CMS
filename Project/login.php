@@ -55,7 +55,7 @@
                              <?php require_once("includes/messages.php") ?>
                              <hr/>
                             
-                             <form id="form" action="classes/login.php" method="POST">
+                             <form id="form" action="submitLogin.php" method="POST">
                                 <div class="form-group m-2">
                                     <label>Email Address <span class="text-danger">*</span></label>
                                     <input type="email" name="email" class="form-control" placeholder="Enter Email" required/>
@@ -71,7 +71,7 @@
                                 </div>
                                 <div class="form-group text-center">
                                     <hr/>
-                                    <a href="index.php" class="btn btn-sm btn-danger "><i class="fa fa-arrow-left"></i> Back To Home</a>
+                                    <a href="forget_password.php" class="btn btn-sm btn-danger "><i class="fa fa-recycle"></i> Forget Password</a>
                                     <a href="register.php" class="btn btn-sm btn-dark "><i class="fa fa-refresh"></i> Dont' Have an Account? Register</a>
                             
                                 </div>

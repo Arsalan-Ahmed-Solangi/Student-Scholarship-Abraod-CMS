@@ -63,6 +63,12 @@
                                         <textarea name="details" class="form-control" required placeholder="Enter university detail description"><?php echo $data['university_details'] ?? null ?></textarea>
                                     </div>
 
+                                    <div class="form-group mb-2 mt-2">
+                                        <label>University Offical Website LInk<span class="text-danger">*</span></label>
+                                        <input value="<?php echo $data['link'] ?>" type="url" name="link" required placeholder="Please enter valid url"/>
+                                        <span class="form-text">please provide valid official website link</span>
+                                    </div>
+
                                     <!-- <div class="form-group mb-2 mt-2">
                                         <label>University Image<span class="text-danger">*</span></label>
                                         <input type="file" name="image" accept="image/*" class="form-control" required />

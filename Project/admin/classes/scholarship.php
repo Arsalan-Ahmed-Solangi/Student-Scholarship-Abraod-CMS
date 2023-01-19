@@ -60,8 +60,8 @@
         //****End of Uploading Multiple Images********//
 
         //*****Uploading Data Now*******//  
-        $query = "INSERT INTO scholarships (`agent_id`,`qualification`,`degree_id`,`institute_name`,`ilets_score`,`country`
-            ,`city`,`minimum_cgpa`,`details`,`deadline`,`duration`,`language`,`image`,`logo`) VALUES ('$agent_id','$qualification','$degree_id'
+        $query = "INSERT INTO scholarships (`price`,`link`,`agent_id`,`qualification`,`degree_id`,`institute_name`,`ilets_score`,`country`
+            ,`city`,`minimum_cgpa`,`details`,`deadline`,`duration`,`language`,`image`,`logo`) VALUES ('$price','$link','$agent_id','$qualification','$degree_id'
             ,'$institute_name','$ilets_score','$country','$city_name','$cgpa','$details','$deadline','$duration','$language','$imageFile','$file')";
         $result = $db->executeQuery($query);
         
@@ -81,7 +81,7 @@
     //****UpdateScholarship******//
     if(isset($_REQUEST['updateScholarship'])){
         extract($_REQUEST);
-        $query = "UPDATE scholarships SET agent_id='$agent_id',qualification='$qualification',degree_id='$degree_id',institute_name='$institute_name',
+        $query = "UPDATE scholarships SET `price`='$price', `link`='$link', agent_id='$agent_id',qualification='$qualification',degree_id='$degree_id',institute_name='$institute_name',
         ilets_score='$ilets_score',country='$country',
         city='$city',minimum_cgpa='$cgpa',details='$details',duration='$duration',`language`='$language' WHERE scholarship_id = $id";
 

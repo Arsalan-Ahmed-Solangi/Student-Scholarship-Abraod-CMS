@@ -33,6 +33,7 @@
                                             <th>University Name</th>
                                             <th>Country</th>
                                             <th>City</th>
+                                            <th>Website Link</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -50,6 +51,7 @@
                                                         <td><?php echo $row['university_name'] ?></td>
                                                         <td><?php echo $row['country'] ?></td>
                                                         <td><?php echo $row['city'] ?></td>
+                                                        <td><a href="<?php echo $row['link'] ?>" target="_blank"><span class="badge text-light  bg-primary">Open Link</span></a></td>
                                                         <td>
                                                         <a href="show_university?id=<?php echo $row['university_id'] ?>" class="btn btn-success btn-sm"><i class="fa fa-eye"></i></a>
 

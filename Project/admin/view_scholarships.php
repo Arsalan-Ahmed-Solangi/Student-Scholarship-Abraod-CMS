@@ -34,7 +34,7 @@
                                             <th>Field</th>
                                             <th>Duration</th>
                                             <th>Deadline</th>
-                            
+                                            <th>Website Site</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -52,6 +52,7 @@
                                                     <td><?php echo $row['institute_name'] ?></td>
                                                     <td><?php echo $row['qualification'] ?></td>
                                                     <td><?php echo $row['duration'] . " Months"  ?></td>
+                                                    <td><a href="<?php echo $row['link'] ?>"><span class="badge bg-primary text-light">Open Link</span></a></td>
                                                     <td><?php echo $row['deadline'] ?></td>
                                                  
                                                     <td>

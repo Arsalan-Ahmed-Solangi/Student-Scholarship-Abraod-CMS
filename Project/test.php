@@ -24,14 +24,15 @@
 // AS `IMAGE` FROM salesflo_stores AS S
 //  INNER JOIN sf_stores AS SF ON S.`StoreId` = SF.`SFStoreId`
 // GROUP BY S.`StoreCode`';
-    $query = 'SELECT S.`StoreCode`,S.`StoreName`,S.`StoreCNIC`,S.`StoreContactNumber`,S.`CompanyCode`,channels.`ChannelName`,S.`StoreFacebookId`,S.`StoreGmailId`,
-(CASE WHEN (S.StoreStatus = 0) THEN "Pending" WHEN (S.StoreStatus = 2) THEN "Rejected" WHEN (S.StoreStatus = 1) THEN "Approved" END) AS StoreStatus 
-,S.`StoreImage` AS checkImage,GROUP_CONCAT(  CASE WHEN (SF.`ImageOutSide`="") THEN "\n\nNull|||"  ELSE CONCAT("\n\n",SF.`ImageOutSide`,"|||")  END   ,"\n",CONCAT("Address :: ",SF.`Address`,"|||"),"\n",CONCAT("",SF.`Latitude`,"|||"),"\n",CONCAT("",SF.`Longitude`) SEPARATOR "---" )
-AS `IMAGE`,users.`UserName` AS ADDEDBY FROM salesflo_stores AS S
- INNER JOIN sf_stores AS SF ON S.`StoreId` = SF.`SFStoreId`
- LEFT JOIN channels ON SF.`ChannelId` =  channels.`ChannelId`
- LEFT JOIN users ON S.`StoreAddedBy` = users.`UserId`
-GROUP BY S.`StoreCode`';
+    $query = ' SELECT S.StoreAddedOn,S.`StoreCode`,S.`StoreName`,S.`StoreCNIC`,S.City,S.`StoreContactNumber`,S.`CompanyCode`,channels.`ChannelName`,S.`StoreFacebookId`,S.`StoreGmailId`,
+    (CASE WHEN (S.StoreStatus = 0) THEN "Pending" WHEN (S.StoreStatus = 2) THEN "Rejected" WHEN (S.StoreStatus = 1) THEN "Approved" END) AS StoreStatus 
+    ,S.`StoreImage` AS checkImage,GROUP_CONCAT(  CASE WHEN (SF.`ImageOutSide`="") THEN "\n\nNull|||"  ELSE CONCAT("\n\n",SF.`ImageOutSide`,"|||")  END   ,"\n",CONCAT("Address :: ",SF.`Address`,"|||"),"\n",CONCAT("",SF.`Latitude`,"|||"),"\n",CONCAT("",SF.`Longitude`) SEPARATOR "---" )
+    AS `IMAGE`,users.`UserName` AS ADDEDBY FROM salesflo_stores AS S
+     LEFT JOIN sf_stores AS SF ON S.`StoreId` = SF.`SFStoreId`
+     LEFT JOIN channels ON SF.`ChannelId` =  channels.`ChannelId`
+     LEFT JOIN users ON S.`StoreAddedBy` = users.`UserId`
+     WHERE City="Lahore" AND StoreStatus <> 2
+    GROUP BY S.`StoreCode`';
 
 
     $result = $db->executeQuery($query);
@@ -44,9 +45,11 @@ GROUP BY S.`StoreCode`';
                     <thead>
                         <tr>
                             <th>SR#</th>
+                            <th>Store Added Date</th>
                             <th>StoreCode</th>
                             <th>StoreName</th>
                             <th>StoreCNIC</th>
+                            <th>City</th>
                             <th>StoreContactNumber</th>
                             <th>CompanyCode</th>
                             <th>Channel Name</th>
@@ -71,6 +74,9 @@ GROUP BY S.`StoreCode`';
                                 <?php echo ++$i ?>
                             </td>
                             <td>
+                                <?php echo $row['StoreAddedOn'] ?>
+                            </td>
+                            <td>
                                 <?php echo $row['StoreCode'] ?>
                             </td>
                             <td>
@@ -78,6 +84,9 @@ GROUP BY S.`StoreCode`';
                             </td>
                             <td>
                                 <?php echo $row['StoreCNIC'] ?>
+                            </td>
+                            <td>
+                                <?php echo $row['City'] ?>
                             </td>
                             <td>
                                 <?php echo $row['StoreContactNumber'] ?>

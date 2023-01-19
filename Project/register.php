@@ -54,8 +54,14 @@
                              <h4 class="text-center"><b>WELCOME TO CMS STUDENT REGISTRATION</b></h4>
                              <?php require_once("includes/messages.php") ?>
                              <hr/>
-                            
-                             <form id="form" action="classes/login.php" method="POST">
+                             <?php 
+                             
+
+                                
+                             
+                             
+                             ?>
+                             <form id="form" action="submitRegister.php" method="POST">
 
                                 <div class="form-group m-2">
                                     <label>Full Name <span class="text-danger">*</span></label>
@@ -78,7 +84,7 @@
                                 <div class="form-group text-center">
                                     <hr/>
 
-                                    <a href="register.php" class="btn btn-sm btn-dark "><i class="fa fa-refresh"></i> Already Have an Account? Login</a>
+                                    <a href="login.php" class="btn btn-sm btn-dark "><i class="fa fa-refresh"></i> Already Have an Account? Login</a>
                             
                                 </div>
                              </form>

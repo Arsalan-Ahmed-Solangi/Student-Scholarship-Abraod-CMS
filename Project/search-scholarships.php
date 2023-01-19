@@ -31,8 +31,8 @@
 
                     if(isset($_POST['search'])){
                         extract($_POST);
-                    
-                       $query = "SELECT * FROM scholarships WHERE `country` LIKE '%$country%'  OR institute_name LIKE '%$institute_name%' OR ilets_score <= '$ilets_score' 
+
+                       $query = "SELECT * FROM scholarships WHERE `country` LIKE '%$country%'  OR institute_name= '$institute_name'
                         OR minimum_cgpa <= '$cgpa'"; 
                         $result = $db->executeQuery($query);
                         while($row = mysqli_fetch_assoc($result)){

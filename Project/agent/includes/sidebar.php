@@ -12,6 +12,11 @@
                                 <div class="sb-nav-link-icon"><i class="fa fa-comment"></i></div>
                                 Chat With Admins
                             </a>
+
+                            <a class="nav-link" href="chatStudents">
+                                <div class="sb-nav-link-icon"><i class="fa fa-comment"></i></div>
+                                Chat With Students
+                            </a>
                                
                             
                             <div class="sb-sidenav-menu-heading">Modules</div>
