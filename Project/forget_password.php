@@ -1,7 +1,7 @@
 <?php  
 
     session_start();
-    if(isset($_SESSION['student'])){
+    if(isset($_SESSION['aget'])){
         $_SESSION['success'] = "You are already logged In!";
         header("location:index.php");
         die;
@@ -51,29 +51,29 @@
                 <div class="col col-xl-10">
                     <div class="card shadow-lg bg-white p-2" style="border-radius: 0.5rem;top:20px">
                         <div class="card-body">
-                             <h4 class="text-center"><b>WELCOME TO STUDENT LOGIN</b></h4>
+                             <h4 class="text-center"><b>FORGET PASSWORD STUDENT PROFILE</b></h4>
                              <?php require_once("includes/messages.php") ?>
                              <hr/>
                             
-                             <form id="form" action="submitLogin.php" method="POST">
+                             <form id="form" action="reset_password.php" method="POST">
                                 <div class="form-group m-2">
                                     <label>Email Address <span class="text-danger">*</span></label>
                                     <input type="email" name="email" class="form-control" placeholder="Enter Email" required/>
+                                    <p class="form-text">please provide your registered email </p>
                                 </div>
 
                                 <div class="form-group m-2">
-                                    <label>Password <span class="text-danger">*</span></label>
-                                    <input  type="password" name="password" class="form-control" placeholder="Enter Password" required/>
+                                    <label>CNIC <span class="text-danger">*</span></label>
+                                    <input  type="text" name="cnic" class="form-control" placeholder="E.g 41054-05324098-9" required/>
+                                    <p class="form-text">please provide your cnic with dashes for verification</p>
                                 </div>
 
                                 <div class="form-group offset-md-10">
-                                    <button type="submit" name="login" class="btn btn-sm btn-dark"><i class="fa fa-sign-in-alt"></i> Login</button>
+                                    <button type="submit" name="Reset" class="btn btn-sm btn-dark"><i class="fa fa-sign-in-alt"></i> Verify</button>
                                 </div>
                                 <div class="form-group text-center">
                                     <hr/>
-                                    <a href="forget_password.php" class="btn btn-sm btn-danger "><i class="fa fa-recycle"></i> Forget Password</a>
-                                    <a href="register.php" class="btn btn-sm btn-dark "><i class="fa fa-refresh"></i> Dont' Have an Account? Register</a>
-                            
+                                    <a href="login.php" class="btn btn-sm btn-danger "><i class="fa fa-arrow-left"></i> Back to Login</a>
                                 </div>
                              </form>
                         </div>
