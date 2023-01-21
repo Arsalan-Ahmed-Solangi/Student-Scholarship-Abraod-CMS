@@ -14,8 +14,8 @@
         
 
 
-        $agent = $_SESSION['agent']['agent_id'];
-        $query  = "SELECT * FROM chatting  WHERE `agent_id`='$agent' AND `admin_id`='$id'";
+        $student = $_SESSION['student']['student_id'];
+        $query  = "SELECT * FROM chattingStudents WHERE `student_id`='$student' AND `agent_id`='$id'";
       
         $result = $db->executeQuery($query);
         if($result){
@@ -25,17 +25,17 @@
                 
                     if($result->num_rows > 0){
                         while($row = mysqli_fetch_assoc($result)){
-                            if($row['message_by'] == "Agent"){
+                            if($row['message_by'] == "Student"){
                                 ?>
                                 <div class="row m-2">
                                     <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12"></div>
-                                    <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12 bg-primary text-light p-2"><?php echo $row['message']  . "<br/>" . "<span style='font-size:10px'>Agent</span>" ?></div>
+                                    <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12 bg-primary text-light p-2"><?php echo $row['message']  . "<br/>" . "<span style='font-size:10px'>Student</span>" ?></div>
                                 </div>
                                 <?php
                             }else{
                                 ?>
                                 <div class="row m-2">
-                                    <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12 bg-light text-primary p-2"><?php echo $row['message'] . "<br/>" . "<span style='font-size:10px'>Admin</span>" ?></div>
+                                    <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12 bg-light text-primary p-2"><?php echo $row['message'] . "<br/>" . "<span style='font-size:10px'>Agent</span>" ?></div>
                                     <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12"></div>
                                   
                                 </div>

@@ -15,7 +15,7 @@
 
 
         $agent = $_SESSION['agent']['agent_id'];
-        $query  = "SELECT * FROM chatting  WHERE `agent_id`='$agent' AND `admin_id`='$id'";
+        $query  = "SELECT * FROM chattingStudents  WHERE `agent_id`='$agent' AND `student_id`='$id'";
       
         $result = $db->executeQuery($query);
         if($result){
@@ -35,7 +35,7 @@
                             }else{
                                 ?>
                                 <div class="row m-2">
-                                    <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12 bg-light text-primary p-2"><?php echo $row['message'] . "<br/>" . "<span style='font-size:10px'>Admin</span>" ?></div>
+                                    <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12 bg-light text-primary p-2"><?php echo $row['message'] . "<br/>" . "<span style='font-size:10px'>Student</span>" ?></div>
                                     <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12"></div>
                                   
                                 </div>
@@ -76,7 +76,7 @@
                         return 0;
                 }else{
                     $.ajax({
-                        url: "classes/send.php",
+                        url: "classes/sendStudent.php",
                         type:"POST",
                         data:{id:id,message:message,type:"sendMessage"},
                         success: function(html){
@@ -87,7 +87,7 @@
                                 )
                             
                                 $.ajax({
-                            url: "classes/chat.php",
+                            url: "classes/chatStudent.php",
                                 type:"POST",
                                 data:{id:html},
                                 success: function(data){
@@ -109,3 +109,4 @@
     }
 
 ?>
+

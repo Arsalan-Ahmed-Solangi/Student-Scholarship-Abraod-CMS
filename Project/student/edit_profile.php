@@ -19,15 +19,15 @@
                 <main>
                     <div class="container-fluid px-4">
                         <div class="p-3"><?php require_once("includes/messages.php") ?></div>
-                        <h2 class="mt-1">Edit Student Details</h2>
+                        <h2 class="mt-1">Edit Profile Details</h2>
                         <ol class="breadcrumb mb-4 bg-light p-2">
-                            <li class="breadcrumb-item active"><i class="fa fa-edit"></i> Edit Student Details</li>
+                            <li class="breadcrumb-item active"><i class="fa fa-edit"></i> Edit Profile Details</li>
                            
                         </ol>
                         <div class="card shadow-sm bg-white p-2">
                             <?php  
                             
-                                $id = $_GET['id'];
+                                $id = $_SESSION['student']['student_id'];
                                 $query = "SELECT * FROM students WHERE student_id='$id'";
                                 $result = $db->executeQuery($query);
                                 $row = mysqli_fetch_assoc($result);
@@ -35,7 +35,7 @@
                             ?>
                             <div class="card-body p-3">
                             <form id="form" action="classes/student.php" method="POST" enctype="multipart/form-data">
-                                    <p class="text-dark bg-light p-3">Please provide valid information about Agent </p>
+                                    <p class="text-dark bg-light p-3">Please provide valid information about ypur profile </p>
                                     <div class="row">
                                         <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
                                         <input type="hidden" name="id" value="<?php echo $row['student_id'] ?>"/> 
@@ -116,9 +116,9 @@
                                     <div class="row">
                                         <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
 
-                                        <div class="form-group mb-2 mt-2">
+                                            <div class="form-group mb-2 mt-2">
                                                 <label>ILETS Score <span class="text-warning">(Optional)</span></label>
-                                                <input type="number" name="ilets" class="form-control" placeholder="Enter Ilets score"/>
+                                                <input value="<?php echo $row['ilets_score'] ?? null?>" type="number" name="ilets" class="form-control" placeholder="Enter Ilets score" />
                                             
                                             </div>
 
@@ -174,7 +174,7 @@
                                 <form  action="classes/student.php" method="POST" enctype="multipart/form-data">
                                     <div class="row">
                                         <div class="col-md-4 col-lg-4 col-xs-12 col-sm-12">
-                                            <img class="img img-thumbnail"  id="blah" src="<?php echo substr($row['profile'],3); ?>" width="60%" height="60%"/>
+                                            <img class="img img-thumbnail"  id="blah" src="../admin/<?php echo substr($row['profile'],3); ?>" width="60%" height="60%"/>
                                         </div>
 
                                         <div class="col-md-8 col-lg-8 col-xs-12 col-sm-12">

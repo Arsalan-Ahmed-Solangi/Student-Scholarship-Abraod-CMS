@@ -39,7 +39,7 @@
                          <?php 
                             session_start();
                             if(isset($_SESSION['student'])){
-                                ?> <li><a href="dashboard.php">Dashboard</a></li>
+                                ?> <li><a href="student/">Dashboard</a></li>
                                 <li><a href="logout.php">Logout</a></li>
 
                                 <?php

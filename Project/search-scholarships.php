@@ -31,8 +31,18 @@
 
                     if(isset($_POST['search'])){
                         extract($_POST);
-
-                       $query = "SELECT * FROM scholarships WHERE `country` LIKE '%$country%'  OR institute_name= '$institute_name'
+                        $priceRange = null;
+                        if(isset($_POST['price'])){
+                            
+                            if($price ==1 ){
+                               $priceRange = " OR `price` <= '100000' ";
+                            }else if ($price == 2){
+                              $priceRange = " OR `price` <= '500000' ";
+                            }else{
+                              $priceRange = " OR `price` >= '500000' ";
+                            }
+                        }
+                       $query = "SELECT * FROM scholarships WHERE `country` LIKE '%$country%' ".$priceRange." OR institute_name= '$institute_name'
                         OR minimum_cgpa <= '$cgpa'"; 
                         $result = $db->executeQuery($query);
                         while($row = mysqli_fetch_assoc($result)){

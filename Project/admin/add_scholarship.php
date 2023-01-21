@@ -246,13 +246,13 @@
 
                                     <div class="form-group mb-2 mt-2">
                                         <label>University Offical Website LInk<span class="text-danger">*</span></label>
-                                        <input type="url" name="link" required placeholder="Please enter valid url"/>
+                                        <input  class="form-control" type="url" name="link" required placeholder="Please enter valid url"/>
                                         <span class="form-text">please provide valid official website link</span>
                                     </div>
                                     
                                     <div class="form-group mb-2 mt-2">
                                         <label>Scholarship Course Price<span class="text-danger">*</span></label>
-                                        <input type="number" name="price" required placeholder="Please enter price"/>
+                                        <input  class="form-control" type="number" name="price" required placeholder="Please enter price"/>
                                         <span class="form-text">please enter price in numbers only</span>
                                     </div>
                                 

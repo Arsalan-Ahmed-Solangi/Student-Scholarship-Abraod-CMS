@@ -19,9 +19,9 @@
                 <main>
                     <div class="container-fluid px-4">
                         <div class="p-3"><?php require_once("includes/messages.php") ?></div>
-                        <h2 class="mt-1">Chat With Students</h2>
+                        <h2 class="mt-1">Chat With Agents</h2>
                         <ol class="breadcrumb mb-4 bg-light p-2">
-                            <li class="breadcrumb-item active"><i class="fa fa-comment"></i> Chat With Students</li>
+                            <li class="breadcrumb-item active"><i class="fa fa-comment"></i> Chat With Agents</li>
                             <!-- <li class="breadcrumb-item active"><a href="view_admins" class="text-dark"> View Site Admins </a></li> -->
                         </ol>
                       
@@ -32,7 +32,7 @@
                                         <div class="card shadow-sm bg-white p-2">
                                         <?php  
                         
-                                         $query = "SELECT * FROM `students`";
+                                         $query = "SELECT * FROM `agents`";
                     
                   
                                         $result = $db->executeQuery($query);
@@ -41,7 +41,7 @@
                                                 $a = 0;
                                                 while($row = mysqli_fetch_assoc($result)){
                                                     ?>
-                                                     <li  class="pe-auto list-group-item disabled itemClick text-primary " id="<?php echo $row['student_id'] ?>">  <img src="https://cdn-icons-png.flaticon.com/512/9200/9200701.png" width="10%" class="img img-thumbnail img-responsive"/>  <?php echo $row['name'] ?></li>
+                                                     <li  class="pe-auto list-group-item disabled itemClick text-primary " id="<?php echo $row['agent_id'] ?>">  <img src="https://cdn-icons-png.flaticon.com/512/9200/9200701.png" width="10%" class="img img-thumbnail img-responsive"/>  <?php echo $row['name'] ?></li>
                                                     <?php
                                                 }
                                             }
@@ -71,7 +71,7 @@
             $(".itemClick").click(function(){
                 var id = $(this).attr("id");
                 $.ajax({
-                    url: "classes/chatStudent.php",
+                    url: "classes/chat.php",
                     type:"POST",
                     data:{id:id},
                     success: function(html){
@@ -85,7 +85,7 @@
 
             function ajaxWork(){
                 $.ajax({
-                    url: "classes/chatStudent.php",
+                    url: "classes/chat.php",
                     type:"POST",
                     data:{id:id},
                     success: function(html){

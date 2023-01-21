@@ -264,13 +264,13 @@
 
                                     <div class="form-group mb-2 mt-2">
                                         <label>University Offical Website LInk<span class="text-danger">*</span></label>
-                                        <input value="<?php echo $data['link'] ?? null ?>" type="url" name="link" required placeholder="Please enter valid url"/>
+                                        <input class="form-control" value="<?php echo $data['link'] ?? null ?>" type="url" name="link" required placeholder="Please enter valid url"/>
                                         <span class="form-text">please provide valid official website link</span>
                                     </div>
                                     
                                     <div class="form-group mb-2 mt-2">
                                         <label>Scholarship Course Price<span class="text-danger">*</span></label>
-                                        <input type="number" value="<?php echo $data['price'] ?? null ?>" name="price" required placeholder="Please enter price"/>
+                                        <input type="number" class="form-control" value="<?php echo $data['price'] ?? null ?>" name="price" required placeholder="Please enter price"/>
                                         <span class="form-text">please enter price in numbers only</span>
                                     </div>
                                 

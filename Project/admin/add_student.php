@@ -108,8 +108,8 @@
                                         <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
 
                                             <div class="form-group mb-2 mt-2">
-                                                <label>ILETS Score <span class="text-danger">*</span></label>
-                                                <input type="number" name="ilets" class="form-control" placeholder="Enter Ilets score" required/>
+                                                <label>ILETS Score <span class="text-warning">(Optional)</span></label>
+                                                <input type="number" name="ilets" class="form-control" placeholder="Enter Ilets score"/>
                                             
                                             </div>
 
