@@ -154,13 +154,14 @@
                         <div class="price">
                             <span class="bg-warning text-light">Deadline <?php echo $scholarShipData['deadline'] ?></span>
                         </div>
-                        <a href="meeting-details.html"><img height="200px" src="admin/<?php echo substr($scholarShipData['image'],3) ?>" alt="New Lecturer Meeting"></a>
+                        <a href="scholarship-details.php?id=<?php echo $scholarShipData['scholarship_id'] ?>"><img height="200px" src="admin/<?php echo substr($scholarShipData['image'],3) ?>" alt="New Lecturer Meeting"></a>
                         </div>
                         <div class="down-content">
                         
                         <a href="scholarship-details?id=<?php echo $scholarShipData['scholarship_id'] ?>"><h4>Course - <?php echo $scholarShipData['qualification'] ?></h4></a>
                         <p class="p-2"><b>Institute Name :  </b> <?php echo $scholarShipData['institute_name'] ?> </p>
-                        <a href="" class="btn btn-sm btn-danger offset-md-8">View More...</a>
+                        
+                        <a href="scholarship-details.php?id=<?php echo $scholarShipData['scholarship_id'] ?>" class="btn btn-sm btn-danger offset-md-8">View More...</a>
                         </div>
                     </div>
                     </div>
