@@ -54,7 +54,7 @@ CREATE TABLE `admins` (
 /*Data for the table `admins` */
 
 insert  into `admins`(`admin_id`,`name`,`email`,`password`,`created_at`) values 
-(1,'Portal Admin','admin@admin.com','123456','2023-01-15 00:53:25'),
+(1,'Portal Admin','admin@admin.com','12345678','2023-01-17 19:20:45'),
 (6,'Ahmer Quereshi','ahmerqureshi@gmail.com','123456','2023-01-15 00:54:35'),
 (7,'Daniyal Mansoor','daniyalmansoor@gmail.com','123456','2023-01-15 00:54:55'),
 (8,'Ahmed Faraz','ahmedfaraz@gmail.com','123456','2023-01-15 00:55:22');
@@ -80,7 +80,7 @@ CREATE TABLE `agents` (
 /*Data for the table `agents` */
 
 insert  into `agents`(`agent_id`,`name`,`email`,`password`,`phone_no`,`cnic`,`gender`,`profile`,`created_at`,`status`) values 
-(4,'Aisha Khan','aishakhan@gmail.com','123456','03000000000','41504-0213141-9','Female','../../agent/uploads/agent/16737741982023-01-15.jpg','2023-01-15 01:00:55',1),
+(4,'Aisha Khan','aishakhan@gmail.com','12345678','03000000000','41504-0213141-9','Female','../../agent/uploads/agent/16737741982023-01-15.jpg','2023-01-15 01:00:55',1),
 (5,'Agent Amjad','agentamjad@gmail.com','123456','03000000000','41504-0213141-0','Male','../uploads/agent/16737265202023-01-14.jpg','2023-01-15 01:02:00',1),
 (6,'John Wich','johnwick@gmail.com','123456','03000000000','40000-0213141-9','Male','../uploads/agent/16737265662023-01-14.jpg','2023-01-15 01:02:46',1);
 
@@ -97,7 +97,7 @@ CREATE TABLE `chatting` (
   `message_by` varchar(11) DEFAULT 'admin',
   `message_to` int(11) DEFAULT NULL,
   PRIMARY KEY (`chat_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `chatting` */
 
@@ -114,7 +114,38 @@ insert  into `chatting`(`chat_id`,`message`,`admin_id`,`agent_id`,`created_at`,`
 (10,'Cha hal ahe',1,4,'2023-01-15 13:45:13','Agent',NULL),
 (11,'Khair hae',1,4,'2023-01-15 13:47:00','Admin',NULL),
 (12,'Hi John Wick',1,6,'2023-01-15 13:48:26','Admin',NULL),
-(13,'cfhcj',1,4,'2023-01-15 17:10:01','Admin',NULL);
+(13,'cfhcj',1,4,'2023-01-15 17:10:01','Admin',NULL),
+(14,'asdsa',1,4,'2023-01-16 17:18:30','Agent',NULL),
+(15,'Hi Ahmed',4,4,'2023-01-21 13:46:40','Agent',NULL),
+(16,'hi',6,4,'2023-01-21 13:47:36','Agent',NULL),
+(17,'Hi',1,4,'2023-01-21 13:49:01','Agent',NULL),
+(18,'He',4,4,'2023-01-21 13:52:12','Agent',NULL);
+
+/*Table structure for table `chattingstudents` */
+
+DROP TABLE IF EXISTS `chattingstudents`;
+
+CREATE TABLE `chattingstudents` (
+  `chatting_id` int(11) NOT NULL AUTO_INCREMENT,
+  `message` text DEFAULT NULL,
+  `agent_id` int(11) DEFAULT NULL,
+  `student_id` int(11) DEFAULT NULL,
+  `message_by` varchar(11) DEFAULT NULL,
+  `message_to` int(11) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`chatting_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
+
+/*Data for the table `chattingstudents` */
+
+insert  into `chattingstudents`(`chatting_id`,`message`,`agent_id`,`student_id`,`message_by`,`message_to`,`created_at`) values 
+(1,'asdsadd',4,4,'Student',NULL,'2023-01-21 13:43:24'),
+(2,'HJi',4,4,'Student',NULL,'2023-01-21 13:45:52'),
+(3,'asdas',4,4,'Agent',NULL,'2023-01-21 13:54:00'),
+(4,'How are you ?',4,4,'Agent',NULL,'2023-01-21 13:54:11'),
+(5,'Im fine and you ',4,4,'Student',NULL,'2023-01-21 13:54:42'),
+(6,'Hello',5,4,'Student',NULL,'2023-01-21 15:15:31'),
+(7,'im fine',5,4,'Agent',NULL,'2023-01-21 15:16:40');
 
 /*Table structure for table `degrees` */
 
@@ -158,14 +189,15 @@ CREATE TABLE `education` (
   KEY `student_id` (`student_id`),
   CONSTRAINT `education_ibfk_1` FOREIGN KEY (`degree_id`) REFERENCES `degrees` (`degree_id`),
   CONSTRAINT `education_ibfk_2` FOREIGN KEY (`student_id`) REFERENCES `students` (`student_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `education` */
 
 insert  into `education`(`education_id`,`student_id`,`degree_id`,`city`,`institute_name`,`passing_year`,`remarks`,`created_at`) values 
 (2,4,5,'Hyderabad','Public School Hyderabad','2014','Matric from Public School Hyderabad A Grade ','2023-01-15 01:08:02'),
 (3,4,8,'Hyderabad ','Preston Boys College','2016','Passing Intermediate from Preston Boys College GOR Colony Hyderabad - B Grade ','2023-01-15 01:08:58'),
-(4,4,3,'Jamshoro','University of Sindh','2023','Done Software Engineering from 2k19-2k23 and the CGPA is 3.0','2023-01-15 01:09:49');
+(4,4,3,'Jamshoro','University of Sindh','2023','Done Software Engineering from 2k19-2k23 and the CGPA is 3.0','2023-01-15 01:09:49'),
+(5,4,10,'Hyderabad','adasd','2022','sdasdasdsad','2023-01-21 14:14:20');
 
 /*Table structure for table `enquires` */
 
@@ -248,6 +280,8 @@ CREATE TABLE `scholarships` (
   `created_at` timestamp NULL DEFAULT current_timestamp(),
   `iframe` text DEFAULT NULL,
   `logo` varchar(50) DEFAULT NULL,
+  `price` varchar(50) DEFAULT NULL,
+  `link` text DEFAULT NULL,
   PRIMARY KEY (`scholarship_id`),
   KEY `agent_id` (`agent_id`),
   KEY `degree_id` (`degree_id`),
@@ -259,8 +293,8 @@ CREATE TABLE `scholarships` (
 
 /*Data for the table `scholarships` */
 
-insert  into `scholarships`(`scholarship_id`,`agent_id`,`qualification`,`degree_id`,`institute_name`,`ilets_score`,`country`,`city`,`minimum_cgpa`,`details`,`deadline`,`duration`,`language`,`image`,`created_at`,`iframe`,`logo`) values 
-(3,4,'Software Engineering',9,'Mehran University of Engineering and Technology','7.0','Pakistan','Khairpur','2.5','Financial assistance & scholarships are available for study at Undergraduate level in all disciplines at HEC selected public sector Pakistani universities and degree awarding institutions.\r\nStudents need to compete for securing admission at the participating institution as per admission policy of the institution and be enrolled in Undergraduate (4 years) programs.\r\nStudents in financial need who are already enrolled in participating institutions are also eligible to apply.\r\nThe eligibility of a candidate is linked to his/her financial needs as assessed by the Institutional Scholarship Award Committee. The financial background of the family of the applicant will be kept in view in this regard.\r\nThe number of slots will be decided by the universities.\r\nFunding for slots will continue for the complete duration of the program. In case any students drop out, they will be replaced by other candidates on the waiting list.\r\nAll disciplines will be kept open. The selected university will decide whether to include or exclude any discipline keeping in view its grant, program cost, and number of allocated slots, etc.\r\nIn the case of Medicine, Pharm-D and other five year programs, funding will be made available for the complete program.\r\nConsidering the allocated grant, the university may adjust the total number of scholarships to an extent in order to cover the tuition fees.\r\nIn addition to the tuition fee, every grantee will be paid Rs.6000/- stipend per month for the complete program.\r\nThose students who secure admission on self-finance are not eligible for HEC Need-Based Scholarship Program','2023-01-31','24',3,'../uploads/scholarships/167377732915-01-2023.jpg','2023-01-15 15:08:49',NULL,'../uploads/scholarships/16737773292023-01-15.jpg');
+insert  into `scholarships`(`scholarship_id`,`agent_id`,`qualification`,`degree_id`,`institute_name`,`ilets_score`,`country`,`city`,`minimum_cgpa`,`details`,`deadline`,`duration`,`language`,`image`,`created_at`,`iframe`,`logo`,`price`,`link`) values 
+(3,4,'Software Engineering',9,'Mehran University of Engineering and Technology','7.0','Pakistan','Khairpur','2.5','Financial assistance & scholarships are available for study at Undergraduate level in all disciplines at HEC selected public sector Pakistani universities and degree awarding institutions.\r\nStudents need to compete for securing admission at the participating institution as per admission policy of the institution and be enrolled in Undergraduate (4 years) programs.\r\nStudents in financial need who are already enrolled in participating institutions are also eligible to apply.\r\nThe eligibility of a candidate is linked to his/her financial needs as assessed by the Institutional Scholarship Award Committee. The financial background of the family of the applicant will be kept in view in this regard.\r\nThe number of slots will be decided by the universities.\r\nFunding for slots will continue for the complete duration of the program. In case any students drop out, they will be replaced by other candidates on the waiting list.\r\nAll disciplines will be kept open. The selected university will decide whether to include or exclude any discipline keeping in view its grant, program cost, and number of allocated slots, etc.\r\nIn the case of Medicine, Pharm-D and other five year programs, funding will be made available for the complete program.\r\nConsidering the allocated grant, the university may adjust the total number of scholarships to an extent in order to cover the tuition fees.\r\nIn addition to the tuition fee, every grantee will be paid Rs.6000/- stipend per month for the complete program.\r\nThose students who secure admission on self-finance are not eligible for HEC Need-Based Scholarship Program','2023-01-31','24',3,'../uploads/scholarships/167377732915-01-2023.jpg','2023-01-15 15:08:49',NULL,'../uploads/scholarships/16737773292023-01-15.jpg',NULL,NULL);
 
 /*Table structure for table `students` */
 
@@ -283,13 +317,16 @@ CREATE TABLE `students` (
   `profile` varchar(100) DEFAULT NULL,
   `status` int(11) DEFAULT 0,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `price` varchar(50) DEFAULT NULL,
+  `link` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`student_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `students` */
 
-insert  into `students`(`student_id`,`name`,`surname`,`email`,`password`,`cnic`,`gender`,`dob`,`phone`,`address`,`ilets_score`,`cgpa`,`religion`,`profile`,`status`,`created_at`) values 
-(4,'Ahmed','Pathan','ahmedkhan@gmail.com','123456','41504-0213000-0','Male','1998-01-08','03000000000','Hyderabad Qasimabad Near Ali Palace Banquet','6.0','3.0',NULL,'../uploads/students/16737268362023-01-14.jpg',1,'2023-01-15 01:07:16');
+insert  into `students`(`student_id`,`name`,`surname`,`email`,`password`,`cnic`,`gender`,`dob`,`phone`,`address`,`ilets_score`,`cgpa`,`religion`,`profile`,`status`,`created_at`,`price`,`link`) values 
+(4,'Ahmed','Pathan','ahmedkhan@gmail.com','ahed12','41504-0213000-0','Male','1998-01-08','03000000000','Hyderabad Qasimabad Near Ali Palace Banquet','6.0','3.0',NULL,'../../admin/uploads/students/16742921262023-01-21.jpg',1,'2023-01-21 15:11:53',NULL,NULL),
+(17,'',NULL,'','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,'2023-01-21 15:13:27',NULL,NULL);
 
 /*Table structure for table `universities` */
 
@@ -303,16 +340,17 @@ CREATE TABLE `universities` (
   `city` varchar(50) DEFAULT NULL,
   `address` text DEFAULT NULL,
   `university_details` text DEFAULT NULL,
+  `link` text DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`university_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `universities` */
 
-insert  into `universities`(`university_id`,`university_name`,`university_image`,`country`,`city`,`address`,`university_details`,`created_at`) values 
-(2,'Mehran University of Engineering and Technology ','../uploads/universities/167375460915-01-2023.jpg','Pakistan','Jamshoro','Mehran University of Engineering and Technology, Indus Hwy, Jamshoro, Sindh 76062',' MUET is a distinctive, pioneering and connected university that shapes the future through educating and empowering people to meet the real challenges of tomorrow. MUET offers undergraduate, postgraduate, and doctoral programs in various engineering, science, management, and technology fields. MUET is ranked among the top ten institutions of higher engineering learning in Pakistan by HEC. Mehran UET has the honor of being the first public sector university in the country to have successfully obtained the ISO 9000 certification. ','2023-01-15 08:50:09'),
-(3,'University of Sindh','../uploads/universities/167377707115-01-2023.jpg','Pakistan','Jamshoro','University of Sindh,\r\nAllama I.I. Kazi Campus,\r\nJamshoro-76080, Sindh, Pakistan.\r\nTel.No.+92-22-9213-181 (90) Ten Lines\r\nEmail: info@usindh.edu.pk','The University of Sindh, the oldest University of the country, was constituted under the University of Sindh Act. No. XVII of 1947 passed by the Legislative Assembly of Sindh. The Act was subsequently revised and modified in 1961 and later. The Act of 1972 under which the University is presently functioning provided for greater autonomy and representation of teachers.','2023-01-15 15:04:31'),
-(4,'National University of Sciences and Technology karachi','../uploads/universities/167377719015-01-2023.jpg','Pakistan','Karachi',' V3QQ+RP3, PNEC Road, PNS Jauhar Karsaz Faisal Cantonment, Karachi, Karachi City, Sindh','The Pakistan Navy Engineering College, also called PNS Jauhar, is a military college operated by the Pakistan Navy. Located in Karachi, Sindh, Pakistan, it is also a constituent college of the National University of Sciences and Technology, Pakistan','2023-01-15 15:06:30');
+insert  into `universities`(`university_id`,`university_name`,`university_image`,`country`,`city`,`address`,`university_details`,`link`,`created_at`) values 
+(2,'Mehran University of Engineering and Technology ','../uploads/universities/167375460915-01-2023.jpg','Pakistan','Jamshoro','Mehran University of Engineering and Technology, Indus Hwy, Jamshoro, Sindh 76062',' MUET is a distinctive, pioneering and connected university that shapes the future through educating and empowering people to meet the real challenges of tomorrow. MUET offers undergraduate, postgraduate, and doctoral programs in various engineering, science, management, and technology fields. MUET is ranked among the top ten institutions of higher engineering learning in Pakistan by HEC. Mehran UET has the honor of being the first public sector university in the country to have successfully obtained the ISO 9000 certification. ','https://www.muet.edu.pk/','2023-01-15 08:50:09'),
+(3,'University of Sindh','../uploads/universities/167377707115-01-2023.jpg','Pakistan','Jamshoro','University of Sindh,\r\nAllama I.I. Kazi Campus,\r\nJamshoro-76080, Sindh, Pakistan.\r\nTel.No.+92-22-9213-181 (90) Ten Lines\r\nEmail: info@usindh.edu.pk','The University of Sindh, the oldest University of the country, was constituted under the University of Sindh Act. No. XVII of 1947 passed by the Legislative Assembly of Sindh. The Act was subsequently revised and modified in 1961 and later. The Act of 1972 under which the University is presently functioning provided for greater autonomy and representation of teachers.','https://usindh.edu.pk/','2023-01-15 15:04:31'),
+(4,'National University of Sciences and Technology karachi','../uploads/universities/167377719015-01-2023.jpg','Pakistan','Karachi',' V3QQ+RP3, PNEC Road, PNS Jauhar Karsaz Faisal Cantonment, Karachi, Karachi City, Sindh','The Pakistan Navy Engineering College, also called PNS Jauhar, is a military college operated by the Pakistan Navy. Located in Karachi, Sindh, Pakistan, it is also a constituent college of the National University of Sciences and Technology, Pakistan','https://nust.edu.pk/','2023-01-15 15:06:30');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
