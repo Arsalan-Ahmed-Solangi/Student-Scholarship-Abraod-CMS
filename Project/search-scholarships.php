@@ -31,15 +31,15 @@
 
                     if(isset($_POST['search'])){
                         extract($_POST);
-                        $priceRange = null;
+                        $priceRange = "";
                         if(isset($_POST['price'])){
                             
                             if($price ==1 ){
-                               $priceRange = " OR `price` <= '100000' ";
+                               $priceRange = " OR `price` <= '500000' ";
                             }else if ($price == 2){
-                              $priceRange = " OR `price` <= '500000' ";
-                            }else{
-                              $priceRange = " OR `price` >= '500000' ";
+                              $priceRange = " OR `price` <= '1000000' ";
+                            }else if($priceRange == 3){
+                              $priceRange = " OR `price` >= '100000' ";
                             }
                         }
                        $query = "SELECT * FROM scholarships WHERE `country` LIKE '%$country%' ".$priceRange." OR institute_name= '$institute_name'
