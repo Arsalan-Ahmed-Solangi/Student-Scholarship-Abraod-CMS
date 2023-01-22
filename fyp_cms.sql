@@ -334,22 +334,22 @@ CREATE TABLE `scholarships` (
 /*Data for the table `scholarships` */
 
 insert  into `scholarships`(`scholarship_id`,`agent_id`,`qualification`,`degree_id`,`institute_name`,`ilets_score`,`country`,`city`,`minimum_cgpa`,`details`,`deadline`,`duration`,`language`,`image`,`created_at`,`iframe`,`logo`,`price`,`link`) values 
-(1,4,'Software Engineering',3,'Open University Malaysia','7.4',NULL,NULL,'3.0',NULL,'2023-01-31',NULL,15,NULL,'2023-01-22 15:08:00',NULL,NULL,'2000000','http://www.oum.edu.my/'),
-(2,5,'Electronics',3,NULL,'9.0',NULL,NULL,'3.0',NULL,'2023-02-22',NULL,15,NULL,'2023-01-22 15:08:01',NULL,NULL,'150000',NULL),
-(3,5,'Information Technology',3,NULL,'5.0',NULL,NULL,'3.0',NULL,'2023-02-13',NULL,15,NULL,'2023-01-22 15:08:03',NULL,NULL,'200000',NULL),
-(4,6,'Information Technology',9,NULL,'6.0',NULL,NULL,'3.0',NULL,'2023-01-30',NULL,15,NULL,'2023-01-22 15:08:05',NULL,NULL,'180000',NULL),
-(5,7,'Electronics',9,NULL,'5.5',NULL,NULL,'3.0',NULL,'2023-01-27',NULL,15,NULL,'2023-01-22 15:08:06',NULL,NULL,'550000',NULL),
-(6,8,'Software Engineering',9,NULL,'7.8',NULL,NULL,'2.5',NULL,'2023-03-01',NULL,15,NULL,'2023-01-22 15:08:07',NULL,NULL,'350000',NULL),
-(7,9,'Information Technology',10,NULL,'8.8',NULL,NULL,'3.0',NULL,'2023-02-22',NULL,15,NULL,'2023-01-22 15:08:09',NULL,NULL,'1100000',NULL),
-(8,4,'Software Engineering',10,NULL,'8.0',NULL,NULL,'2.5',NULL,'2023-01-24',NULL,15,NULL,'2023-01-22 15:08:11',NULL,NULL,'750000',NULL),
-(9,5,'English',3,NULL,'9.0',NULL,NULL,'2.0',NULL,'2023-02-07',NULL,15,NULL,'2023-01-22 15:08:12',NULL,NULL,'130000',NULL),
-(10,6,'Electronics',9,NULL,'4.0',NULL,NULL,'2.5',NULL,'2023-01-28',NULL,15,NULL,'2023-01-22 15:08:14',NULL,NULL,'400000',NULL),
-(11,7,'Mathematics',5,NULL,'6.9',NULL,NULL,'2.0',NULL,'2023-02-03',NULL,15,NULL,'2023-01-22 15:08:15',NULL,NULL,'120000',NULL),
-(12,8,'English',9,NULL,'7.0',NULL,NULL,'2.5',NULL,'2023-01-28',NULL,15,NULL,'2023-01-22 15:08:18',NULL,NULL,'660000',NULL),
-(13,10,'Mathematics',3,NULL,'9.0',NULL,NULL,'2.0',NULL,'2023-02-17',NULL,15,NULL,'2023-01-22 15:08:20',NULL,NULL,'150000',NULL),
-(14,5,'Mathematics',3,NULL,'9.0',NULL,NULL,'2.9',NULL,'2023-03-16',NULL,15,NULL,'2023-01-22 15:08:22',NULL,NULL,'150000',NULL),
-(15,6,'Computer Science',3,NULL,'9.0',NULL,NULL,'2.0',NULL,'2023-01-31',NULL,15,NULL,'2023-01-22 15:08:23',NULL,NULL,'150000',NULL),
-(16,7,'Pharmacy',3,NULL,'7.7',NULL,NULL,'2.4',NULL,'2023-01-31',NULL,15,NULL,'2023-01-22 15:08:26',NULL,NULL,'150000',NULL);
+(1,4,'Software Engineering',3,'Open University Malaysia','7.4','Malaysia','Kuala Lampur','3.0',NULL,'2023-01-31','48',15,'https://www.gstatic.com/ui/v1/menu/device_default_thumbnail2.png','2023-01-22 15:08:00',NULL,'https://www.gstatic.com/ui/v1/menu/device_default_','2000000','http://www.oum.edu.my/'),
+(2,5,'Electronics',3,'Open University of Catalonia','9.0','Spain','Barcelona','3.0',NULL,'2023-02-22','48',15,'https://www.gstatic.com/ui/v1/menu/dark_thumbnail2.png','2023-01-22 15:08:01',NULL,'https://www.gstatic.com/ui/v1/menu/dark_thumbnail2','150000','http://www.uoc.edu/portal/en/'),
+(3,5,'Information Technology',3,'Open University of China [formally China Central Radio and TV University (CCRTVU) and local radio an','5.0','China','Beijing','3.0',NULL,'2023-02-13','48',15,'https://www.gstatic.com/ui/v1/menu/light_thumbnail2.png','2023-01-22 15:08:03',NULL,'https://www.gstatic.com/ui/v1/menu/light_thumbnail','200000','http://en.ouchn.edu.cn/'),
+(4,6,'Information Technology',9,'Open University of Cyprus','6.0','Cyprus','Latsia, Nicosia','3.0',NULL,'2023-01-30','48',15,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTum5L4kFStZ-DcGG3m_ZBEd6La_YSO660kkg2bX1jBnvk7','2023-01-22 15:08:05',NULL,'https://encrypted-tbn0.gstatic.com/images?q=tbn:AN','180000','https://www.ouc.ac.cy/index.php/en/'),
+(5,7,'Electronics',9,'Open University of Guangdong','5.5','China','Guangzhou City','3.0',NULL,'2023-01-27','48',15,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScuLP7c64qZskK37Wi6C1elXpoj1zvGkxA5cuYygjma4Nt','2023-01-22 15:08:06',NULL,'https://encrypted-tbn0.gstatic.com/images?q=tbn:AN','550000','http://www.gdrtvu.edu.cn/'),
+(6,8,'Software Engineering',9,'Open University of Hong Kong','7.8','China','Hong Kong','2.5',NULL,'2023-03-01','24',15,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmjHOnydPt2t0zRDga4sUyuDTwWxYkdO3dMUk5Bj7FfXxr','2023-01-22 15:08:07',NULL,'https://encrypted-tbn0.gstatic.com/images?q=tbn:AN','350000','http://www.ouhk.edu.hk/wcsprd/Satellite?pagename=OUHK/tcSingPage&lang=eng'),
+(7,9,'Information Technology',10,NULL,'8.8',NULL,NULL,'3.0',NULL,'2023-02-22','24',15,NULL,'2023-01-22 15:08:09',NULL,NULL,'1100000',NULL),
+(8,4,'Software Engineering',10,'Open University of Japan','8.0','Japan','Chiba','2.5',NULL,'2023-01-24','24',15,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlpDz68oyYmcw1W911YbeQccRhfZdZfd6stRdLikn9DYmI','2023-01-22 15:08:11',NULL,'https://encrypted-tbn0.gstatic.com/images?q=tbn:AN','750000','http://www.ouj.ac.jp/eng/'),
+(9,5,'English',3,'Open University of Kaohsiung','9.0','Taiwan','Kaohsiung City','2.0',NULL,'2023-02-07','24',15,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShinZmvE_oRBMi9K6hfibf_MZ1XnJfSXWwhqrOlcFek6Jp','2023-01-22 15:08:12',NULL,'https://encrypted-tbn0.gstatic.com/images?q=tbn:AN','130000','http://www.ouk.edu.tw/english/index.aspx'),
+(10,6,'Electronics',9,'Open University of Mauritius','4.0','Mauritius','Moka','2.5',NULL,'2023-01-28','24',15,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSQE_HJaqHz3DVQoWVle201CI70iWEhiwoJYKTTTmU2QWK','2023-01-22 15:08:14',NULL,'https://encrypted-tbn0.gstatic.com/images?q=tbn:AN','400000','http://www.open.ac.mu/'),
+(11,7,'Mathematics',5,'Open University of Sri Lanka','6.9','Sri Lanka','Nawala, Nugegoda','2.0',NULL,'2023-02-03','36',15,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRX_PV9WjGHsycU0OdkCCfg09CgqEQLHD-e46xNISXsaAyY','2023-01-22 15:08:15',NULL,'https://encrypted-tbn0.gstatic.com/images?q=tbn:AN','120000','https://ou.ac.lk/'),
+(12,8,'English',9,'Open University of Sudan','7.0','Sudan','','2.5',NULL,'2023-01-28','24',15,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD4_W1Qtt1VPF40oEEbvXJKLnxBdNoKWeR5m5IUEizMmVl','2023-01-22 15:08:18',NULL,'https://encrypted-tbn0.gstatic.com/images?q=tbn:AN','660000',''),
+(13,10,'Mathematics',3,'Open University of Tanzania','9.0','Tanzania','Dar es Salaam','2.0',NULL,'2023-02-17','36',15,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSJKo5zgdyY5lWNmxKKh81VwSlHF4vrw2xxUdHgPYP66gd','2023-01-22 15:08:20',NULL,'https://encrypted-tbn0.gstatic.com/images?q=tbn:AN','150000','https://www.out.ac.tz/'),
+(14,5,'Mathematics',3,'Pandit Sundarlal Sharma (Open) University','9.0','India','Bilaspur, Himachal Pradesh','2.9',NULL,'2023-03-16','36',15,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKkn5RXmtxURfWtYf3f2L-dq2g-flrGR9tWYhevAFnP8CO','2023-01-22 15:08:22',NULL,'https://encrypted-tbn0.gstatic.com/images?q=tbn:AN','150000','http://pssou.ac.in/'),
+(15,6,'Computer Science',3,'Payame Noor University','9.0','Iran','Tehran','2.0',NULL,'2023-01-31','12',15,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTG8_Zf5AT5wu9ltAMfQqCU-1HVH0Nr3HXD6bHUtfYsc9Es','2023-01-22 15:08:23',NULL,'https://encrypted-tbn0.gstatic.com/images?q=tbn:AN','150000','http://en.pnu.ac.ir/Portal/Home/'),
+(16,7,'Pharmacy',3,'Polytechnic University of the Philippines Open University','7.7','Philippines','Manila','2.4',NULL,'2023-01-31','60',15,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaaCBXxOzH5ShryR8DOT6YMCDVgmi_pIJfLhuYvOkBUAaU','2023-01-22 15:08:26',NULL,'https://encrypted-tbn0.gstatic.com/images?q=tbn:AN','150000','https://www.pup.edu.ph/ous/');
 
 /*Table structure for table `studentchat` */
 
