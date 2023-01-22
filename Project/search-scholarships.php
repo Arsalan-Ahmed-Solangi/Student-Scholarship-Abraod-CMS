@@ -53,7 +53,7 @@
                           <div class="price">
                           <span class="bg-warning text-light">Deadline <?php echo $row['deadline'] ?></span>
                           </div>
-                          <a href="scholarship-details.php?id=<?php echo $row['scholarship_id'] ?>"><img height="100px" src="admin/<?php echo substr($row['image'],3) ?>" alt="New Lecturer Meeting"></a>
+                          <a href="scholarship-details.php?id=<?php echo $row['scholarship_id'] ?>"><img style="object-fit:fit" height="200px" src="<?php echo $row['image'] ?>" alt="New Lecturer Meeting"></a>
                         </div>
                         <div class="down-content">
                           <div class="date">  

@@ -38,7 +38,7 @@
                   <span class="bg-warning text-light">Deadline <?php echo $row['deadline'] ?></span>
                   </div>
                   
-                 <img src="admin/<?php echo substr($row['image'],3) ?>" height="400px" alt="">
+                 <img src="<?php echo $row['image'] ?>" height="400px" alt="">
                 </div>
                 <div class="down-content">
                  <h4><?php echo $row['institute_name'] ?></h4>
@@ -72,6 +72,20 @@
                       <div class="location">
                         <h5>Minimum Ilets Score</h5>
                         <p><?php echo $row['ilets_score'] ?></p>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                      <div class="location">
+                        <h5>Price</h5>
+                        <p><?php echo $row['price'] ?></p>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                      <div class="location">
+                        <h5>Website Link</h5>
+                        <p><a href="<?php echo $row['link'] ?>" target="_blank" class="btn btn-sm btn-primary">open link</a></p>
                       </div>
                     </div>
                     <div class="col-lg-3 mt-5">
