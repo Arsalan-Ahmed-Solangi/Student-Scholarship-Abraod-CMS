@@ -17,7 +17,7 @@
         //*****EMAIL AND CNIC UNIQUE CHECK*******//
         $query = "SELECT * FROM students WHERE email='$email' OR cnic='$cnic'";
         $result = $db->executeQuery($query);
-        if($result->num_rows){
+        if($result->num_rows){  
             
             $_SESSION['error']  = "Email Already Exits | try new one"; 
             header("location:../add_student");
@@ -139,12 +139,12 @@
 
  
          if($result){
-            $_SESSION['success']  = "Profile has been  Updated Successfully!";  
-            header("location:../");
+            $_SESSION['success']  = "Students Account Details Updated Successfully!";  
+            header("location:../view_students");
             die;  
          }else{
             $_SESSION['error']  = "Something Went Wrong!";  ;
-            header("location:../edit_profile");
+            header("location:../".$error);
             die;
          }
 
@@ -152,15 +152,31 @@
     //***End of EditStudent*****//
 
     
+    //***Start of Delete Student*******//
+    if(isset($_GET['id']) &&  !empty($_GET['id']) ){
 
+        $id = $_GET['id'];
+        $query = "DELETE FROM students WHERE student_id=$id";
+        $result = $db->executeQuery($query);
+        if($result){
+            $_SESSION['success']  = "Student has been deleted successfully!";  
+            header("location:../view_students");
+            die;
+        }else{
+            $_SESSION['error']  = "Student Record Not Exists";  
+            header("location:../view_students");
+            die; 
+        }
+    }
+    //***End of Delete Student*******//
 
     //****Start of Update Profile*****//
     if(isset($_REQUEST['updateProfile'])){
         extract($_REQUEST);
 
 
-       
-        $directory = "../../admin/uploads/students";
+        $error = "edit_student?id=".$id;
+        $directory = "../uploads/students";
         if(!is_dir($directory)){
             mkdir($directory);
         }
@@ -171,7 +187,7 @@
         $formats = array("jpg","JPG","PNG","JPEG","png","jpeg");
         if(!in_array($fileType,$formats)){
             $_SESSION['error'] = "Profile Picture must be an image (JPG,PNG,JPEG)";
-            header("location:../edit_profile");
+            header("location:../".$error);
             die;
         }
 
@@ -181,19 +197,18 @@
             $query = "UPDATE students SET profile='$file' WHERE student_id='$id'";
             $result = $db->executeQuery($query);
             if($result){
-                $_SESSION['success'] = "Profile Image Updated successfully!";
-                $_SESSION['student']['profile'];
-                header("location:../");
-                die;    
+                $_SESSION['success'] = "Student Account Profile Updated successfully!";
+                header("location:../index");
+                die;
             }else{
                 $_SESSION['error'] = "Not Updated!";
-                header("location:../edit_profile    ");
+                header("location:../".$error);
                 die;   
             }
         }else
         {
             $_SESSION['error'] = "Something went wrong - profile picture must be less than 2mb";
-            header("location:../edit_profile    ");
+            header("location:../".$error);
             die;
         }
 
@@ -208,7 +223,7 @@
         $query = "INSERT INTO education (`student_id`,`degree_id`,`city`,`institute_name`,`passing_year`,`remarks`) VALUES ('$student_id','$degree_id','$city','$institute_name','$passing_year','$remarks')";
         $result = $db->executeQuery($query);
         if($result){
-            $_SESSION['success']  = "Education Details has been added!";  ;
+            $_SESSION['success']  = "Student Education Details has been added!";  ;
             header("location:../add_education");
             die;
         }else{
@@ -219,24 +234,23 @@
 
     }
     //****End of AddEducation*******//
-    
-   
+
      //***Start of Education Student*******//
      if(isset($_GET['education_id']) &&  !empty($_GET['education_id']) ){
 
        
         $student_id = $_GET['student_id'];
         $id = $_GET['education_id'];
-    
+        $error = "show_student?id=".$student_id;
         $query = "DELETE FROM education WHERE education_id=$id";
         $result = $db->executeQuery($query);
         if($result){
             $_SESSION['success']  = "Education Detail been deleted successfully!";  
-            header("location:../profile.php");
+            header("location:../".$error);
             die;
         }else{
             $_SESSION['error']  = "Something Went Wrong";  
-            header("location:../profile.php");
+            header("location:../",$error);
             die; 
         }
     }

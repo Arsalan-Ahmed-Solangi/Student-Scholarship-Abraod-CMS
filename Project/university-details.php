@@ -42,9 +42,19 @@
                  <p><?php echo $row['country'] . "-" .$row['city'] . "-".$row['address']?></p>
                   
                   <p class="description">
-                    <?php echo $row['university_details'] ?>
+                    <?php echo $row['university_details'];
+                    
+                    
+                    if($row['link'] != ""){
+                      ?>
+                       <a href="<?php echo $row['link'] ?>" target="_blank" class="btn btn-sm btn-primary mb-2 offset-md-6">Open Website</a>
+                      <?php
+                    }
+                    
+                    ?>
+                    
                   </p>
-                  
+                    
                 </div>
               </div>
             </div>

@@ -174,7 +174,7 @@
                                 <form  action="classes/student.php" method="POST" enctype="multipart/form-data">
                                     <div class="row">
                                         <div class="col-md-4 col-lg-4 col-xs-12 col-sm-12">
-                                            <img class="img img-thumbnail"  id="blah" src="../admin/<?php echo substr($row['profile'],3); ?>" width="60%" height="60%"/>
+                                            <img class="img img-thumbnail"  id="blah" src="<?php echo substr($row['profile'],3); ?>" width="60%" height="60%"/>
                                         </div>
 
                                         <div class="col-md-8 col-lg-8 col-xs-12 col-sm-12">

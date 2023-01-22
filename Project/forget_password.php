@@ -1,7 +1,7 @@
 <?php  
 
     session_start();
-    if(isset($_SESSION['aget'])){
+    if(isset($_SESSION['student'])){
         $_SESSION['success'] = "You are already logged In!";
         header("location:index.php");
         die;
@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-    <title>CMS  AGENT LOGIN</title>
+    <title>FORGET PASSWORD</title>
     <style>
         body{
             background-color: #212529;
@@ -51,11 +51,11 @@
                 <div class="col col-xl-10">
                     <div class="card shadow-lg bg-white p-2" style="border-radius: 0.5rem;top:20px">
                         <div class="card-body">
-                             <h4 class="text-center"><b>FORGET PASSWORD STUDENT PROFILE</b></h4>
+                             <h4 class="text-center"><b>FORGET PASSWORD </b></h4>
                              <?php require_once("includes/messages.php") ?>
                              <hr/>
                             
-                             <form id="form" action="reset_password.php" method="POST">
+                             <form id="form" action="password_token.php" method="POST">
                                 <div class="form-group m-2">
                                     <label>Email Address <span class="text-danger">*</span></label>
                                     <input type="email" name="email" class="form-control" placeholder="Enter Email" required/>
@@ -63,18 +63,20 @@
                                 </div>
 
                                 <div class="form-group m-2">
-                                    <label>CNIC <span class="text-danger">*</span></label>
-                                    <input  type="text" name="cnic" class="form-control" placeholder="E.g 41054-05324098-9" required/>
-                                    <p class="form-text">please provide your cnic with dashes for verification</p>
+                                <label>Select Account Type <span class="text-danger">*</span></label>
+                                   <select name="role" class="form-select" required>
+                                        <option value="">--please select account type--</option>
+                                        <option value="1">Admin</option>
+                                        <option value="2">Agent</option>
+                                        <option value="3">Student</option>
+                                   </select>
                                 </div>
 
+                                
                                 <div class="form-group offset-md-10">
                                     <button type="submit" name="Reset" class="btn btn-sm btn-dark"><i class="fa fa-sign-in-alt"></i> Verify</button>
                                 </div>
-                                <div class="form-group text-center">
-                                    <hr/>
-                                    <a href="login.php" class="btn btn-sm btn-danger "><i class="fa fa-arrow-left"></i> Back to Login</a>
-                                </div>
+                                
                              </form>
                         </div>
                     </div>

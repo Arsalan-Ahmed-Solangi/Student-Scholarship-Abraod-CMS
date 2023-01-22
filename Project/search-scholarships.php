@@ -70,9 +70,11 @@
                     
                           <?php
                         }
-             
-                       
-                       $query = "SELECT * FROM universities WHERE `country` LIKE '%$country%'  OR university_name LIKE '%$institute_name%'"; 
+                        $iname ="";
+                      if(isset($institute_name) && $institute_name != ""){
+                        $iname = "OR university_name LIKE '%$institute_name%'";
+                      }
+                       $query = "SELECT * FROM universities WHERE `country` ='$country' $iname "; 
                         
                         $result = $db->executeQuery($query);
                         
@@ -84,14 +86,25 @@
                           <div class="price">
                       
                           </div>
-                          <a href="university-details.php?id=<?php echo $row['university_id'] ?>"><img height="300px" width="300px" src="admin/<?php echo substr($row['university_image'],3) ?>" alt="New Lecturer Meeting"></a>
+                          <a href="university-details.php?id=<?php echo $row['university_id'] ?>"><img height="300px" width="300px" onerror="https://cdn.britannica.com/85/13085-050-C2E88389/Corpus-Christi-College-University-of-Cambridge-England.jpg" src="<?php echo   $row['university_image'] ?? "s" ?>" alt="New Lecturer Meeting"></a>
                         </div>
                         <div class="down-content">
                           
                           <a href="university-details.php?id=<?php echo $row['university_id'] ?>"></a>
                         <h3 class="p-2 text-center"><b></b> <?php echo $row['university_name'] ?> </h3>
-                        <p class="p-2"><b></b> <?php echo $row['country']. "-" . $row['city'] . "-".$row['address']?> </p>
-                        <a href="university-details.php?id=<?php echo $row['university_id'] ?>" class="btn btn-sm btn-danger offset-md-6">View University Details</a>
+                        <p class="p-2"><b></b> <?php echo $row['country']. "-" . $row['city']?> </p>
+                          <div class="row">
+                          <?php 
+
+                            if($row['link'] != ""){
+                              ?>
+                              <a href="<?php echo $row['link'] ?>" target="_blank" class="btn btn-sm btn-primary mb-2 ">Open Website</a>
+                              <?php
+                            }
+
+                            ?>
+                            <a href="university-details.php?id=<?php echo $row['university_id'] ?>" class="btn btn-sm btn-danger ">View University Details</a>
+                                                      </div>
                         </div>
                       </div>
                     </div>
