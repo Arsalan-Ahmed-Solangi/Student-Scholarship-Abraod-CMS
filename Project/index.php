@@ -24,52 +24,15 @@
               <h2>Welcome to  University Finder</h2>
               <div class="row">
                 <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-                    <div class="card" style="width:90%">
+                    <div class="card" style="width:110%">
                         <div class="card-body p-3">
                             <form id="form" action="search-scholarships.php" method="POST">
                                 <div class="row">
                                     <div class="col-md-3">
-                                      <?php 
-                                      
-                                          $query = "SELECT DISTINCT country FROM universities";
-                                          $result = $db->executeQuery($query);
-                                          if($result->num_rows > 0){
-                                            echo ' <select name="country" class="form-select" >';
-                                            echo ' <option value="">--Select Country--</option>';
-                                            while($row = mysqli_fetch_assoc($result)){
-                                              ?>
-                                               
-                                               
-                                                    <option value="<?php echo $row['country'] ?>"><?php echo $row['country'] ?></option>
-                                               
-                                              <?php
-                                            }
-                                            echo " </select>";
-                                          }
-                                      ?>
-                                     
-                                        <!-- <input type="text"  name="country" placeholder="Enter Country Name" class="form-control"/> -->
+                                        <input type="text"  name="country" placeholder="Enter Country Name" class="form-control"/>
                                     </div>
                                     <div class="col-md-3">
-                                    <?php 
-                                      
-                                      $query = "SELECT DISTINCT university_name FROM universities";
-                                      $result = $db->executeQuery($query);
-                                      if($result->num_rows > 0){
-                                        echo ' <select name="institute_name" class="form-select" >';
-                                        echo ' <option value="">--Select Institute Name--</option>';
-                                        while($row = mysqli_fetch_assoc($result)){
-                                          ?>
-                                           
-                                           
-                                                <option value="<?php echo $row['university_name'] ?>"><?php echo $row['university_name'] ?></option>
-                                           
-                                          <?php
-                                        }
-                                        echo " </select>";
-                                      }
-                                  ?>
-                                        <!-- <input type="text"  name="institute_name" placeholder="Enter University Name" class="form-control"/> -->
+                                        <input type="text"  name="institute_name" placeholder="Enter University Name" class="form-control"/>
                                     </div>
 
                                     <div class="col-md-3">

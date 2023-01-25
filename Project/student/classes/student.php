@@ -92,7 +92,7 @@
 
         
         extract($_REQUEST);
-       
+        $error = "edit_student?id=".$id;
   
         //*****EMAIL UNIQUE CHECK*******//
         $query = "SELECT * FROM students WHERE email='$email'  AND student_id <> '$id'";
@@ -100,7 +100,7 @@
         if($result->num_rows){
               
             $_SESSION['error']  = "Email is already exists| try new one"; 
-            header("location:../edit_profile.php");
+            header("location:../".$error);
             die;
         }
 
@@ -110,7 +110,7 @@
          if($result->num_rows){
                
              $_SESSION['error']  = "CNIC is  already exists"; 
-             header("location:../edit_profile.php");
+             header("location:../".$error);
              die;
          }
         
@@ -119,7 +119,7 @@
         if(!preg_match($cnic_pattern,$cnic)){
             
             $_SESSION['error']  = "CNIC Pattern is Wrong,use dashes"; 
-            header("location:../edit_profile.php");
+            header("location:../".$error);
             die;
            
         }
@@ -128,7 +128,7 @@
          if(!preg_match('/^[0-9]{11}+$/',$phone_no)){
              
              $_SESSION['error']  = "Phone No must be in digits"; 
-             header("location:../edit_profile.php");
+             header("location:../".$error);
              die;
             
          }
@@ -144,7 +144,7 @@
             die;  
          }else{
             $_SESSION['error']  = "Something Went Wrong!";  ;
-            header("location:../edit_profile.php");
+            header("location:../".$error);
             die;
          }
 

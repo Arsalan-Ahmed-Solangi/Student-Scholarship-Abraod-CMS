@@ -1,7 +1,7 @@
 <?php  
 
     session_start();
-    if(isset($_SESSION['student'])){
+    if(isset($_SESSION['aget'])){
         $_SESSION['success'] = "You are already logged In!";
         header("location:index.php");
         die;
@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-    <title>CMS STUDENT FORGET PASSWORD</title>
+    <title>CMS  AGENT LOGIN</title>
     <style>
         body{
             background-color: #212529;
